@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pract5.MainCarouselPage"
+             BackgroundColor="#253E5F">
+
+    <!-- Экран 1: Welcome -->
+    <ContentPage Title="Регистрация">
+        <StackLayout Padding="20" VerticalOptions="Center">
+            <Label Text="Введите ваши данные" 
+               TextColor="White" 
+               FontSize="20"
+               HorizontalOptions="Center"/>
+
+            <Entry x:Name="firstNameEntry" 
+               Placeholder="Имя"
+               BackgroundColor="#3A4F6D"
+               TextColor="White"/>
+
+            <Entry x:Name="lastNameEntry" 
+               Placeholder="Фамилия"
+               BackgroundColor="#3A4F6D"
+               TextColor="White"/>
+
+            <Button Text="Продолжить" 
+                Clicked="OnSignInClicked"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                CornerRadius="10"/>
+        </StackLayout>
+    </ContentPage>
+
+    <!-- Экран 2: User Info -->
+    <ContentPage Title="Профиль">
+        <StackLayout Padding="20" VerticalOptions="Center">
+            <Label x:Name="welcomeLabel" 
+               TextColor="White"
+               FontSize="22"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"/>
+
+            <Button Text="Работа с данными" 
+                Clicked="OnGoToDataScreenClicked"
+                BackgroundColor="#2196F3"
+                TextColor="White"
+                CornerRadius="10"
+                Margin="0,20"/>
+        </StackLayout>
+    </ContentPage>
+
+    <!-- Экран 3: Data Screen (вариант 3) -->
+    <ContentPage Title="Data">
+        <StackLayout Padding="20">
+            <Picker x:Name="itemPicker" 
+                    Title="Выберите вариант какой-нибудь"
+                    TextColor="White"
+                    BackgroundColor="#3A4F6D">
+                <Picker.Items>
+                    <x:String>Вариант 1</x:String>
+                    <x:String>Вариант 2</x:String>
+                    <x:String>Вариант 3</x:String>
+                </Picker.Items>
+            </Picker>
+            <Slider x:Name="valueSlider" 
+                    Maximum="1000" 
+                    Minimum="0"
+                    ThumbColor="#4CAF50" />
+            <Button Text="Button" 
+                    Clicked="OnButtonClicked"
+                    BackgroundColor="#FF0000"
+                    TextColor="White"
+                    CornerRadius="10"/>
+            <Label x:Name="resultLabel" 
+                   TextColor="White"
+                   FontAttributes="Bold"/>
+        </StackLayout>
+    </ContentPage>
+</CarouselPage>
